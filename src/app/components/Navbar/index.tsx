@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 
 export default function Navbar() {
     return (
@@ -8,11 +9,11 @@ export default function Navbar() {
                 <span className="logo">S</span>Salim Ansari
             </div>
             <ul className="nav-list">
-                <li className="nav-item"><a href="/">Home</a></li>
-                <li className="nav-item"><a href="/about">About</a></li>
-                <li className="nav-item"><a href="/experience">Experience</a></li>
-                <li className="nav-item"><a href="/projects">Projects</a></li>
-                <li className="nav-item"><a href="/contact">Contact</a></li>
+                <li className="nav-item"><Link href="/">Home</Link></li>
+                <li className="nav-item"><Link href="/about">About</Link></li>
+                <li className="nav-item"><Link href="/experience">Experience</Link></li>
+                <li className="nav-item"><Link href="/projects">Projects</Link></li>
+                <li className="nav-item"><Link href="/contact">Contact</Link></li>
             </ul>
             {/* <div className=""></div> */}
         </nav>

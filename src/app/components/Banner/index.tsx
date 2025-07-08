@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 
 export default function Banner () {
     return (
@@ -6,7 +7,7 @@ export default function Banner () {
         <section className="home-page">
             <div className="img-container">
 
-            <img src="/images/my-pic.jpeg" alt="" className="my-pic" />
+            <Image src="/images/my-pic.jpeg" alt="" className="my-pic" />
             </div>
             <h1 className="ttl">Hi, I'm Salim Ansari</h1>
             <p className="desg">Software Engineer</p>
