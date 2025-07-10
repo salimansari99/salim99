@@ -36,7 +36,7 @@ export default function Contact() {
                     flex-direction: column;
                     padding: 20px 40px;
                     margin: 0 auto;
-                    height: 680px;
+                    height: 660px;
                     background: #f2f2f2;
                     justify-content: center;
                     gap: 32px;
@@ -101,6 +101,13 @@ export default function Contact() {
                     .send-email {margin: 10px auto; width: 40%; text-align: center;}
                     .mail-txt {font-size: 18px;font-weight: normal; margin-bottom: 10px;}
                     .mail-id {font-size: 18px;font-weight: bold}
+
+                    @media (max-width: 768px) {
+                    .contact-container {padding: 12px; height: 770px;}
+                    .form-container {margin: 0;}
+                    .form-group {width: 100%;}
+                    .send-email {width: 100%;}
+                    }
             `}</style>
         </>
     );

@@ -21,7 +21,7 @@ export default function Banner () {
             <button className="kn-mr">Know More &rarr;</button>
         </section>
         <style jsx>{`
-         .home-page {height: 800px;display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ccc;}
+         .home-page {height: 600px;display: flex; flex-direction: column; justify-content: center; align-items: center; margin-block: 32px;}
             .img-container {width: 250px; margin: 24px auto; }
             .my-pic {width: 220px; height: 220px; border-radius: 100%;background-position: center; 
   display: block;
@@ -35,6 +35,10 @@ export default function Banner () {
   .skill-item {font-size: 18px; padding: 12px;}
   .skill-item:not(:last-child)::after {content: "|"; position: absolute; margin-left: 12px;}
   .kn-mr {font-size: 18px;margin-bottom: 28px; border: 2px solid #000; border-radius: 8px; padding: 12px 24px;}
+  @media (max-width: 768px) {
+  .home-page {height: auto;}
+.skill-list {flex-wrap: wrap; justify-content: center;}
+  }
         `}</style>
         </>
     );

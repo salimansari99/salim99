@@ -16,12 +16,16 @@ export default function Footer() {
         </footer>
         <style jsx>{`
         .footer {height: 60px; display: flex; padding: 12px 48px;background: #ccc;justify-content: space-around;
-    align-items: center;}
+    align-items: center;
+    border-top: 1px solid #000;}
         .copyright {font-size: 16px; color: rgb(0 0 0 /65%)}
         .soc-list {display: flex; align-items: center; gap: 18px; justify-content: center;}
         .soc-item {padding: 5px 8px; background: #f2f2f2; border-radius: 12px; cursor: pointer; }
         .soc-item:hover {background: #a7a7a7;}
         .soc-img {width: 32px; height: 32px;}
+        @media (max-width: 768px) {
+        .footer {flex-direction: column-reverse; height: auto; gap: 32px;}
+        }
         `}</style>
         </>
     ); 
