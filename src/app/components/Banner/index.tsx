@@ -18,7 +18,7 @@ export default function Banner () {
                 <li className="skill-item">HTML</li>
                 <li className="skill-item">CSS</li>
             </ul>
-            <button className="kn-mr">Know More &rarr;</button>
+            <a href="/about" className="kn-mr">Know More &rarr;</a>
         </section>
         <style jsx>{`
          .home-page {height: 600px;display: flex; flex-direction: column; justify-content: center; align-items: center; margin-block: 32px;}
