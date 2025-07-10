@@ -24,18 +24,18 @@ Network18 Media & Investments Limited</a>
                     </ul>
                     <h4 className="subttl">Technologies</h4>
                     <ul className="technologies">
-                        <li className="tech-item"> JavaScript</li>
-                        <li className="tech-item"> React.js  </li>
-                        <li className="tech-item"> Next.js </li>
-                        <li className="tech-item"> Node.js</li>
-                        <li className="tech-item"> Express.js </li>
-                        <li className="tech-item">  MongoDB </li>
+                        <li className="tech-item" style={{color: '#4e79a7'}}> JavaScript</li>
+                        <li className="tech-item" style={{color: '#f28e2b'}}> React.js  </li>
+                        <li className="tech-item" style={{color: '#e15759'}}> Next.js </li>
+                        <li className="tech-item" style={{color: '#9c755f'}}> Node.js</li>
+                        <li className="tech-item" style={{color: '#59a14f'}}> Express.js </li>
+                        <li className="tech-item" style={{color: '#af7aa1'}}>  MongoDB </li>
                     </ul>
                 </div>
              </div>
         </section>
         <style jsx>{`
-        .exp-container {width: 45%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; gap: 10px; }
+        .exp-container {width: 45%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; gap: 10px; font-family: "Ubuntu", sans-serif;}
          .experience-wrapper {display: flex; gap: 10px;position: relative;}
         .experience-wrapper::before {content: ''; position: absolute; border-left: 5px solid #ccc;width: 5px;height: 90%;
     left: -28px;    border-radius: 100%;}
@@ -47,7 +47,7 @@ Network18 Media & Investments Limited</a>
         .comp-name {font-size: 18px; color: #007bff }
         .time {font-size: 18px;}
         .key-res {}
-        .key-item {font-size: 16px; font-weight: 500; margin-bottom: 10px; padding-left: 15px; display: block; position: relative;}
+        .key-item {font-size: 18px; font-weight: 500; margin-bottom: 10px; padding-left: 15px; display: block; position: relative;}
         .key-item::before {content: "";
     background: #ca7070;
     border-radius: 100%;
@@ -57,8 +57,14 @@ Network18 Media & Investments Limited</a>
     position: absolute;
     left: -4px;
     top: 6px;}
-        .tech-item {font-size: 16px; font-weight: bold;display: inline-block; margin: 10px 20px 10px 0; background: #ddd; padding: 10px; border-radius: 16px;}
+        .tech-item {font-size: 18px; font-weight: bold;display: inline-block; margin: 10px 20px 10px 0; background: #ddd; padding: 10px; border-radius: 16px;
+        text-decoration: underline;}
         .subttl {font-size: 22px; font-weight: bold;}
+        @media (max-width: 768px) {
+        .exp-container  {width: 100%; padding: 10px;}
+        .title {margin-block: 12px; }
+        .desg {font-size: 24px;}
+        }
         `}</style>
         </>
     );
