@@ -24,7 +24,7 @@ export default function Footer() {
         .soc-item:hover {background: #a7a7a7;}
         .soc-img {width: 32px; height: 32px;}
         @media (max-width: 768px) {
-        .footer {flex-direction: column-reverse; height: auto; gap: 32px;}
+        .footer {flex-direction: column-reverse; height: auto; gap: 24px;}
         }
         `}</style>
         </>

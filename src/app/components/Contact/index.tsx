@@ -1,6 +1,49 @@
 'use client';
+import { useEffect, useState } from 'react';
 
 export default function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+    const [showThankMsg, setShowThankMsg] = useState(false);
+
+    const fetchRandomUser = async () => {
+        try {
+            const res = await fetch('https://randomuser.me/api/');
+            const data = await res.json();
+            const user = data.results[0];
+
+            setFormData((prev) => ({
+                ...prev,
+                name: `${user.name.first} ${user.name.last}`,
+                email: user.email,
+                message: `Hi Salim, I'm reaching out to connect with you.`,
+            }));
+        } catch (err) {
+            console.error('Failed to fetch user:', err);
+        }
+    };
+
+    useEffect(() => {
+        fetchRandomUser(); // Auto-fill on mount (optional)
+    }, []);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('Submitted:', formData);
+        setShowThankMsg(true);
+        setTimeout(() => {
+            setShowThankMsg(false);
+        }, 2000);
+        // You can now send this formData to an endpoint or email service
+    };
+
     return (
         <>
             <section className="contact-container">
@@ -9,18 +52,18 @@ export default function Contact() {
                 <form className="form-container">
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="What should I call you ?" />
+                        <input type="text" name="name" id="name" onChange={handleChange} placeholder="What should I call you ?" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Where can I reach you ?" />
+                        <input type="email" name="email" id="email" onChange={handleChange} placeholder="Where can I reach you ?" />
                     </div>
                     <div className="form-group msg">
                         <label htmlFor="message">Message</label>
-                        <textarea name="message" id="message" className="msg-area" cols={30} rows={5} placeholder="Typing..."></textarea>
+                        <textarea name="message" id="message" onChange={handleChange} className="msg-area" cols={30} rows={5} placeholder="Typing..."></textarea>
                     </div>
                     <div className="form-group full-width">
-                        <button type="submit" className="send-btn">SEND</button>
+                        <button type="submit" onClick={handleSubmit} className="send-btn">SEND</button>
                     </div>
                 </form>
                 <div className="send-email">
@@ -28,7 +71,16 @@ export default function Contact() {
                     <p className="mail-id">salim99.official@gmail.com</p>
 
                 </div>
+
+                <div className="success-msg-overlay" style={{display: showThankMsg ? 'block' : 'none'}}>
+                <div className="success-modal">
+                    <p className="greeting-msg">Thanks for reaching out!</p>
+                </div>
+            </div>
+
             </section>
+
+            
 
             <style jsx>{`
                 .contact-container {
@@ -98,8 +150,8 @@ export default function Contact() {
                     width: 96px;
                     margin: 20px auto;
                 }
-                    .send-email {margin: 10px auto; width: 40%; text-align: center;}
-                    .mail-txt {font-size: 18px;font-weight: normal; margin-bottom: 10px;}
+                    .send-email {margin: 10px auto; width: 40%; text-align: center; border-top: 1px solid #000;}
+                    .mail-txt {font-size: 18px;font-weight: normal; margin-block: 10px;}
                     .mail-id {font-size: 18px;font-weight: bold}
 
                     @media (max-width: 768px) {
@@ -108,6 +160,22 @@ export default function Contact() {
                     .form-group {width: 100%;}
                     .send-email {width: 100%;}
                     }
+            `}</style>
+            <style jsx>{`
+            .success-msg-overlay {
+            display: none;
+            content: '';
+            position: fixed;
+            top: 30%;
+            left: 40%;
+            text-align: center;
+            
+            }
+            .success-modal {width: 360px; height: 360px; background: #e0e0e0; z-index: 9999;border-radius: 24px;}
+            .greeting-msg {color: #000; font-size: 32px; font-weight: bold; padding: 32px; }
+            @media (max-width: 768px) {
+            .success-msg-overlay {left: 14px;}
+            }
             `}</style>
         </>
     );

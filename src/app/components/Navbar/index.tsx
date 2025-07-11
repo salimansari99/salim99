@@ -59,7 +59,7 @@ export default function Navbar() {
     width: 70%;
     height: auto;
     background: #404040;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     text-align: right;
@@ -72,7 +72,7 @@ export default function Navbar() {
         .nav-list.open {
         display: block;
         width: 70%;
-        height: auto;
+        height: 100vh;
         background: #404040;
         position: absolute;
         top: 0;

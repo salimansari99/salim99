@@ -38,11 +38,11 @@ export default function About() {
         </div>
       </section>
       <style jsx>{`
-      .about-me {width: 40%; height: 694px; margin: 32px auto; padding: 12px;}
+      .about-me {width: 50%; height: 600px; margin: 32px auto; padding: 12px;}
       .highlight {font-weight: bold;}
 
       .about-para {margin-bottom: 12px; font-weight: 500; font-size: 18px; font-family: "Ubuntu", sans-serif;}
-      .nm {text-align: center; font-size: 24px; font-weight: bold; margin-block: 12px;}
+      .nm {text-align: center; font-size: 24px; font-weight: bold; margin-block: 12px;font-family: cursive;}
 
       @media (max-width: 768px) {
        .about-me {width: 100%; height: auto; margin: 32px 0; padding: 12px;}
