@@ -1,0 +1,79 @@
+.homePage {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block: 32px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.imgContainer {
+  width: 250px;
+  margin: 24px auto;
+}
+
+.myPic {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  background-position: center;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: top;
+}
+
+.ttl {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+.desg {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+.skillList {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillItem {
+  font-size: 18px;
+  padding: 12px;
+  position: relative;
+}
+
+.skillItem:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -10px;
+}
+
+.knowMore {
+  font-size: 18px;
+  margin-bottom: 28px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .homePage {
+    height: auto;
+  }
+
+  .skillList {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

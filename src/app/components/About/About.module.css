@@ -1,0 +1,45 @@
+.aboutMe {
+  width: 50%;
+  height: 600px;
+  margin: 32px auto;
+  padding: 12px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.ttl {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* .aboutDesc {
+  
+} */
+
+.aboutPara {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.nm {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-block: 12px;
+  font-family: cursive;
+}
+
+@media (max-width: 768px) {
+  .aboutMe {
+    width: 100%;
+    height: auto;
+    margin: 32px 0;
+    padding: 12px;
+  }
+}

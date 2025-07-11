@@ -1,45 +1,23 @@
 'use client';
+import styles from './Banner.module.css';
 
-export default function Banner () {
-    return (
-        <>
-        <section className="home-page">
-            <div className="img-container">
-
-            <img src="/images/my-pic.jpeg" alt="me" className="my-pic" />
-            </div>
-            <h1 className="ttl">Hi, I'm Salim Ansari</h1>
-            <p className="desg">Software Engineer</p>
-            <ul className="skill-list">
-                <li className="skill-item">NextJS</li>
-                <li className="skill-item">ReactJS</li>
-                <li className="skill-item">NodeJS</li>
-                <li className="skill-item">JavaScript</li>
-                <li className="skill-item">HTML</li>
-                <li className="skill-item">CSS</li>
-            </ul>
-            <a href="/about" className="kn-mr">Know More &rarr;</a>
-        </section>
-        <style jsx>{`
-         .home-page {height: 600px;display: flex; flex-direction: column; justify-content: center; align-items: center; margin-block: 32px;}
-            .img-container {width: 250px; margin: 24px auto; }
-            .my-pic {width: 220px; height: 220px; border-radius: 100%;background-position: center; 
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
-  object-position: top;
-  }
-  .ttl {font-size: 40px; font-weight: bold; margin-bottom: 28px; }
-  .desg {font-size: 32px; font-weight: bold; margin-bottom: 28px;}
-  .skill-list {display: flex; gap: 8px; margin-bottom: 28px; position: relative;}
-  .skill-item {font-size: 18px; padding: 12px;}
-  .skill-item:not(:last-child)::after {content: "|"; position: absolute; margin-left: 12px;}
-  .kn-mr {font-size: 18px;margin-bottom: 28px; border: 2px solid #000; border-radius: 8px; padding: 12px 24px;}
-  @media (max-width: 768px) {
-  .home-page {height: auto;}
-.skill-list {flex-wrap: wrap; justify-content: center;}
-  }
-        `}</style>
-        </>
-    );
+export default function Banner() {
+  return (
+    <section className={styles.homePage}>
+      <div className={styles.imgContainer}>
+        <img src="/images/my-pic.jpeg" alt="me" className={styles.myPic} />
+      </div>
+      <h1 className={styles.ttl}>Hi, I'm Salim Ansari</h1>
+      <p className={styles.desg}>Software Engineer</p>
+      <ul className={styles.skillList}>
+        <li className={styles.skillItem}>NextJS</li>
+        <li className={styles.skillItem}>ReactJS</li>
+        <li className={styles.skillItem}>NodeJS</li>
+        <li className={styles.skillItem}>JavaScript</li>
+        <li className={styles.skillItem}>HTML</li>
+        <li className={styles.skillItem}>CSS</li>
+      </ul>
+      <a href="/about" className={styles.knowMore}>Know More &rarr;</a>
+    </section>
+  );
 }

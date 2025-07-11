@@ -1,0 +1,49 @@
+.footer {
+  padding: 12px 32px;
+  background: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid #000;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.copyright {
+  font-size: 16px;
+  color: #333;
+}
+
+.copyright a {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.socList {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.socItem {
+  display: flex;
+  background: #f4f4f4;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.socImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+ .footer {
+    flex-direction: column-reverse;
+ }
+}

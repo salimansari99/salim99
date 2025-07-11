@@ -1,0 +1,111 @@
+/* Experience.module.css */
+
+.expContainer {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.experienceWrapper {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.experienceWrapper::before {
+  content: '';
+  position: absolute;
+  border-left: 5px solid #ccc;
+  width: 5px;
+  height: 90%;
+  left: -28px;
+  border-radius: 100%;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-block: 40px;
+}
+
+.expItem {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 60px;
+  flex-direction: column;
+}
+
+.desg {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.compDur {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.compName {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.time {
+  font-size: 18px;
+}
+
+.keyItem {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  display: block;
+  position: relative;
+}
+
+.keyItem::before {
+  content: "";
+  background: #ca7070;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  position: absolute;
+  left: -4px;
+  top: 6px;
+}
+
+.techItem {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 20px 10px 0;
+  background: #ddd;
+  padding: 10px;
+  border-radius: 16px;
+  text-decoration: underline;
+}
+
+.subttl {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .expContainer {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    margin-block: 12px;
+  }
+}
