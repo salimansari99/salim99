@@ -29,6 +29,30 @@ export default function Projects() {
                         <a href="https://thought-waves.vercel.app/" className={styles.demoLink}>Demo</a>
                     </div>
                 </li>
+                <li className={styles.projectItem}>
+                    <div className={styles.projectTop}>
+                        {/* <img className={styles.suitcaseIc} src="/images/briefcase.png" alt="" /> */}
+                        <h4 className={styles.projectName}>TodoPilot</h4>
+                    </div>
+                    <p className={styles.projectDesc}>
+                        TodoPilot – Your personal productivity co-pilot.
+                    </p>
+                    <ul className={styles.descList}>
+                        <li>✅ Full CRUD Functionality – Seamlessly create, read, update, and delete tasks with an intuitive interface.</li>
+                        <li>📱 Responsive & Minimal UI – Optimized for all devices to provide a smooth user experience across platforms.</li>
+                        <li>⚙️ Tech-Driven Productivity – Built using modern technologies like React, Next.js, and TypeScript for efficiency and scalability.</li>
+                    </ul>
+                    <ul className={styles.technologies}>
+                        <li className={styles.techItem}>ReactJS</li>
+                        <li className={styles.techItem}>NextJS</li>
+                        <li className={styles.techItem}>JavaScript</li>
+                        <li className={styles.techItem}>Context API</li>
+                    </ul>
+                    <div className={styles.demo}>
+                        <img className={styles.linkIc} src="/images/link.png" alt="Link" />
+                        <a href="https://todo-pilot.vercel.app/" className={styles.demoLink}>Demo</a>
+                    </div>
+                </li>
             </ul>
         </section>
     );

@@ -9,7 +9,7 @@
 .title {
   font-size: 32px;
   font-weight: bold;
-  margin-block: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -25,6 +25,7 @@
   border: 1px solid #1a1a1a;
   border-radius: 8px;
   background: #f3f3f3;
+  max-width: 540px;
 }
 
 .projectTop {
@@ -68,6 +69,7 @@
 
 .technologies {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
@@ -98,4 +100,10 @@
 .demoLink {
   color: #0080E8;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projectItem {
+        width: 100%;
+    }
 }
