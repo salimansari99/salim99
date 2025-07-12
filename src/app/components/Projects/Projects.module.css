@@ -1,0 +1,101 @@
+.projectsContainer {
+  width: 100%;
+  height: auto;
+  margin: 24px auto;
+  padding: 12px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-block: 40px;
+  text-align: center;
+}
+
+.projectsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.projectItem {
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  background: #f3f3f3;
+}
+
+.projectTop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  background: #1a1a1a;
+  color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+.projectName {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.suitcaseIc {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: #f3f3f3;
+}
+
+.projectDesc {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 12px 0;
+  padding: 5px 10px;
+}
+
+.descList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 5px 10px;
+}
+
+.technologies {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 10px;
+  margin: 12px 0;
+}
+
+.techItem {
+  background: #ddd;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.demo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.linkIc {
+  width: 18px;
+  height: 18px;
+}
+
+.demoLink {
+  color: #0080E8;
+  text-decoration: underline;
+}
