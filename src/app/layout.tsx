@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Salim Ansari | Frontend Developer Portfolio",
-  description:
-    "Explore the portfolio of Salim Ansari – a passionate frontend developer skilled in React, Next.js, and modern web technologies. Showcasing real-world projects, clean UI, and a commitment to building fast, responsive web applications.",
+  description: "Explore the portfolio of Salim Ansari – a passionate frontend developer skilled in React, Next.js, and modern web technologies. Showcasing real-world projects, clean UI, and a commitment to building fast, responsive web applications.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
