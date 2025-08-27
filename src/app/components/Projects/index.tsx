@@ -74,7 +74,7 @@ export default function Projects() {
                     </ul>
                     <div className={styles.demo}>
                         <img className={styles.linkIc} src="/images/link.png" alt="Link" />
-                        <a href="https://todo-pilot.vercel.app/" className={styles.demoLink}>Demo</a>
+                        <a href="https://insightpress-media-frontend.vercel.app/" className={styles.demoLink}>Demo</a>
                     </div>
                 </li>
             </ul>
