@@ -1,16 +1,60 @@
 .homePage {
-  height: 600px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block: 32px;
-  font-family: 'Ubuntu', sans-serif;
+  padding: 80px 32px;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.homePage::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.1) 0%,
+    transparent 70%
+  );
+  animation: pulse 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
 }
 
 .imgContainer {
   width: 250px;
   margin: 24px auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .myPic {
@@ -22,58 +66,143 @@
   margin: 0 auto;
   object-fit: cover;
   object-position: top;
+  border: 4px solid transparent;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: padding-box;
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4),
+    0 0 0 4px rgba(99, 102, 241, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.myPic:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 70px rgba(99, 102, 241, 0.5),
+    0 0 0 4px rgba(99, 102, 241, 0.3);
 }
 
 .ttl {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 28px;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .desg {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 28px;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .skillList {
   display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 40px;
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .skillItem {
-  font-size: 18px;
-  padding: 12px;
+  font-size: 16px;
+  padding: 10px 20px;
   position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.skillItem:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
 }
 
 .skillItem:not(:last-child)::after {
-  content: "|";
-  position: absolute;
-  right: -10px;
+  display: none;
 }
 
 .knowMore {
   font-size: 18px;
   margin-bottom: 28px;
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 12px 24px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 14px 32px;
   text-decoration: none;
-  color: inherit;
+  color: var(--foreground);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 0.8s both;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  overflow: hidden;
+}
+
+.knowMore::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.knowMore:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+}
+
+.knowMore:hover::before {
+  left: 0;
 }
 
 @media (max-width: 768px) {
   .homePage {
-    height: auto;
+    min-height: auto;
+    padding: 60px 16px;
   }
 
   .skillList {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
+  }
+
+  .skillItem {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
