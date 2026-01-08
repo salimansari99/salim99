@@ -1,130 +1,425 @@
 .contactContainer {
   display: flex;
   flex-direction: column;
-  padding: 20px 40px;
+  padding: 60px 40px;
   margin: 0 auto;
-  height: 660px;
-  background: #f2f2f2;
+  min-height: 100vh;
+  background: var(--background);
   justify-content: center;
-  gap: 32px;
-  font-family: 'Ubuntu', sans-serif;
+  gap: 48px;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactContainer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.08) 0%,
+    transparent 70%
+  );
+  animation: pulse 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.headerSection {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ttl {
   text-align: center;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .formContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 80px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .formGroup {
   width: 48%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .formGroup label {
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 5px;
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.labelIcon {
+  font-size: 18px;
+}
+
+.inputField,
 .formGroup input {
-  border: 1px solid #9a9a9a;
-  padding: 8px;
-  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  padding: 14px 16px;
+  border-radius: 12px;
   outline: none;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.inputField:focus,
+.formGroup input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+.inputField::placeholder,
+.formGroup input::placeholder {
+  color: var(--text-secondary);
 }
 
 .msg {
-  width: 98%;
+  width: 100%;
 }
 
 .msgArea {
-  border: 1px solid #9a9a9a;
-  padding: 8px;
-  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  padding: 14px 16px;
+  border-radius: 12px;
   outline: none;
   width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+.msgArea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+.msgArea::placeholder {
+  color: var(--text-secondary);
 }
 
 .fullWidth {
   width: 100%;
   text-align: center;
+  margin-top: 8px;
 }
 
 .sendBtn {
-  background: #000;
-  color: #fff;
-  padding: 12px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--foreground);
+  padding: 16px 40px;
+  border-radius: 12px;
   font-size: 18px;
-  font-weight: 500;
-  width: 96px;
-  margin: 20px auto;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.sendBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.sendBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+}
+
+.sendBtn:hover::before {
+  left: 0;
+}
+
+.sendBtn:active {
+  transform: translateY(-1px);
+}
+
+.sendIcon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.sendBtn:hover .sendIcon {
+  transform: translateX(4px);
 }
 
 .sendEmail {
-  margin: 10px auto;
-  width: 40%;
+  margin: 40px auto 0;
+  width: 100%;
+  max-width: 600px;
   text-align: center;
-  border-top: 1px solid #000;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.divider {
+  position: relative;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--card-border);
+}
+
+.dividerText {
+  position: relative;
+  background: var(--background);
+  padding: 0 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .mailTxt {
   font-size: 18px;
-  font-weight: normal;
-  margin-block: 10px;
+  font-weight: 400;
+  margin-block: 16px;
+  color: var(--text-secondary);
 }
 
 .mailId {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.mailId:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateY(-2px);
 }
 
 /* Success Message Overlay */
 .successMsgOverlay {
   display: none;
-  content: '';
   position: fixed;
-  top: 30%;
-  left: 40%;
-  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .successModal {
-  width: 360px;
-  height: 360px;
-  background: #e0e0e0;
-  z-index: 9999;
+  width: 400px;
+  max-width: 90vw;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  z-index: 10000;
   border-radius: 24px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: scaleIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.successModal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 48px;
+  color: var(--foreground);
+  font-weight: bold;
+  animation: checkmark 0.5s ease-out 0.2s both;
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .greetingMsg {
-  color: #000;
-  font-size: 32px;
-  font-weight: bold;
-  padding: 32px;
+  color: var(--foreground);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.successSubtext {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 400;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .contactContainer {
-    padding: 12px;
-    height: 770px;
+    padding: 40px 20px;
+    min-height: auto;
   }
 
   .formContainer {
     margin: 0;
+    padding: 24px;
+    gap: 20px;
   }
 
   .formGroup {
@@ -133,9 +428,20 @@
 
   .sendEmail {
     width: 100%;
+    margin-top: 32px;
   }
 
-  .successMsgOverlay {
-    left: 14px;
+  .sendBtn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .successModal {
+    width: 90vw;
+    padding: 32px 24px;
+  }
+
+  .greetingMsg {
+    font-size: 24px;
   }
 }

@@ -13,8 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Salim Ansari | Frontend Developer Portfolio",
-  description: "Explore the portfolio of Salim Ansari – a passionate frontend developer skilled in React, Next.js, and modern web technologies. Showcasing real-world projects, clean UI, and a commitment to building fast, responsive web applications.",
+  title: "Salim Ansari | SDE 2 - Software Development Engineer",
+  description:
+    "SDE 2 Software Development Engineer specializing in full-stack development with expertise in React, Next.js, Node.js, and modern web technologies. Building scalable, high-performance applications with clean architecture and best practices.",
+  keywords: [
+    "SDE 2",
+    "Software Development Engineer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Web Development",
+  ],
+  authors: [{ name: "Salim Ansari" }],
+  openGraph: {
+    title: "Salim Ansari | SDE 2 - Software Development Engineer",
+    description:
+      "SDE 2 Software Development Engineer specializing in full-stack development with expertise in React, Next.js, Node.js, and modern web technologies.",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.ico",
   },

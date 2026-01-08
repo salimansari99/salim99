@@ -1,13 +1,16 @@
-'use client';
-import styles from './Experience.module.css';
+"use client";
+import styles from "./Experience.module.css";
 
 export default function Experience() {
   return (
     <section className={styles.expContainer}>
       <h2 className={styles.title}>Experience</h2>
+
       <div className={styles.experienceWrapper}>
+        {/* SDE-2 */}
         <div className={styles.expItem}>
-          <h4 className={styles.desg}>Software Development Engineer 1</h4>
+          <h4 className={styles.desg}>Software Development Engineer II</h4>
+
           <div className={styles.compDur}>
             <a
               href="https://www.nw18.com/"
@@ -17,60 +20,61 @@ export default function Experience() {
             >
               Network18 Media & Investments Limited
             </a>
-            <p className={styles.time}>June 2023 - Present</p>
+            <p className={styles.time}>June 2025 – Present</p>
           </div>
-          <h4 className={styles.desg}>Key Responsibilities & Technologies:</h4>
 
+          <p className={styles.summary}>
+            Working on large-scale, high-traffic digital news platforms
+            including
+            <strong> CNBCTV18, Firstpost, and Forbes India</strong>, delivering
+            performant, SEO-optimized, and highly reliable web experiences for
+            millions of users.
+          </p>
+
+          <h4 className={styles.desg}>Key Responsibilities & Contributions</h4>
           <ul>
             <li className={styles.keyItem}>
-              Developing dynamic, high-performance web interfaces using Next.js,
-              React.js, JavaScript, and TypeScript, with a focus on performance,
-              reusability, and maintainability.
+              Leading development of scalable and performance-critical features
+              using <strong>Next.js, React.js, TypeScript</strong>, optimized
+              for server-side rendering and fast page loads.
             </li>
             <li className={styles.keyItem}>
-              Building RESTful APIs and backend services using Node.js and
-              Express.js, ensuring secure and efficient communication between
-              client and server.
+              Architecting reusable UI components and frontend modules used
+              across multiple Network18 media properties.
             </li>
             <li className={styles.keyItem}>
-              Implementing responsive UI components with HTML5, CSS3, and modern
-              CSS frameworks, optimizing for cross-browser compatibility and
-              accessibility.
+              Designing and implementing secure, high-performance REST APIs
+              using <strong>Node.js and Express.js</strong>.
             </li>
             <li className={styles.keyItem}>
-              Participating in code reviews, sprint planning, and agile ceremonies
-              to ensure code quality and timely delivery.
+              Improving Core Web Vitals (LCP, CLS, INP) and SEO performance for
+              content-heavy news platforms.
             </li>
             <li className={styles.keyItem}>
-              Collaborating with product, QA, and DevOps teams to release reliable
-              features in production.
+              Mentoring junior developers, reviewing pull requests, and driving
+              best practices for code quality and maintainability.
+            </li>
+            <li className={styles.keyItem}>
+              Collaborating closely with editorial, product, QA, and DevOps
+              teams to ship reliable features under tight publishing deadlines.
             </li>
           </ul>
 
           <h4 className={styles.subttl}>Technologies</h4>
           <ul>
-            <li className={styles.techItem} style={{ color: '#4e79a7' }}>
-              JavaScript
-            </li>
-            <li className={styles.techItem} style={{ color: '#f28e2b' }}>
-              React.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#e15759' }}>
-              Next.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#9c755f' }}>
-              Node.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#59a14f' }}>
-              Express.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#af7aa1' }}>
-              MongoDB
-            </li>
+            <li className={styles.techItem}>JavaScript / TypeScript</li>
+            <li className={styles.techItem}>React.js</li>
+            <li className={styles.techItem}>Next.js</li>
+            <li className={styles.techItem}>Node.js</li>
+            <li className={styles.techItem}>Express.js</li>
+            <li className={styles.techItem}>MongoDB</li>
           </ul>
         </div>
+
+        {/* SDE-1 */}
         <div className={styles.expItem}>
-          <h4 className={styles.desg}>Trainee</h4>
+          <h4 className={styles.desg}>Software Development Engineer I</h4>
+
           <div className={styles.compDur}>
             <a
               href="https://www.nw18.com/"
@@ -80,48 +84,85 @@ export default function Experience() {
             >
               Network18 Media & Investments Limited
             </a>
-            <p className={styles.time}>June 2022 - July 2023</p>
+            <p className={styles.time}>June 2023 – May 2025</p>
           </div>
-          <h4 className={styles.desg}>Key Responsibilities & Technologies:</h4>
 
+          <h4 className={styles.desg}>Key Responsibilities & Contributions</h4>
           <ul>
             <li className={styles.keyItem}>
-              Developed interactive user interfaces using React.js and JavaScript, focusing on component-based 
- architecture and state management.
+              Built and maintained production-grade features for leading digital
+              news brands using <strong>Next.js and React.js</strong>.
             </li>
             <li className={styles.keyItem}>
-              Built server-side rendered applications and optimized routing with Next.js.
+              Implemented SSR, dynamic routing, and data-fetching strategies to
+              support real-time news updates.
             </li>
             <li className={styles.keyItem}>
-             Created and managed backend APIs using Node.js and Express.js, integrating database operations 
- and middleware.
+              Developed backend APIs and middleware to support content delivery,
+              analytics, and platform integrations.
             </li>
-            
+            <li className={styles.keyItem}>
+              Ensured responsive, accessible UI across devices and browsers for
+              large-scale audiences.
+            </li>
+            <li className={styles.keyItem}>
+              Actively participated in sprint planning, code reviews, and
+              production deployments.
+            </li>
           </ul>
 
           <h4 className={styles.subttl}>Technologies</h4>
           <ul>
-            <li className={styles.techItem} style={{ color: '#4e79a7' }}>
-              JavaScript
+            <li className={styles.techItem}>JavaScript</li>
+            <li className={styles.techItem}>React.js</li>
+            <li className={styles.techItem}>Next.js</li>
+            <li className={styles.techItem}>Node.js</li>
+            <li className={styles.techItem}>Express.js</li>
+            <li className={styles.techItem}>MongoDB</li>
+          </ul>
+        </div>
+
+        {/* Trainee */}
+        <div className={styles.expItem}>
+          <h4 className={styles.desg}>Software Engineer Trainee</h4>
+
+          <div className={styles.compDur}>
+            <a
+              href="https://www.nw18.com/"
+              className={styles.compName}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Network18 Media & Investments Limited
+            </a>
+            <p className={styles.time}>June 2022 – July 2023</p>
+          </div>
+
+          <h4 className={styles.desg}>Key Responsibilities & Learning</h4>
+          <ul>
+            <li className={styles.keyItem}>
+              Developed interactive, component-driven user interfaces using
+              <strong> React.js</strong>.
             </li>
-            <li className={styles.techItem} style={{ color: '#f28e2b' }}>
-              React.js
+            <li className={styles.keyItem}>
+              Built server-rendered applications with <strong>Next.js</strong>
+              and optimized routing and page performance.
             </li>
-            <li className={styles.techItem} style={{ color: '#e15759' }}>
-              Next.js
+            <li className={styles.keyItem}>
+              Created backend APIs using <strong>Node.js and Express.js</strong>
+              , gaining hands-on experience with full-stack development.
             </li>
-            <li className={styles.techItem} style={{ color: '#9c755f' }}>
-              Node.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#59a14f' }}>
-              Express.js
-            </li>
-            <li className={styles.techItem} style={{ color: '#af7aa1' }}>
-              HTML
-            </li>
-            <li className={styles.techItem} style={{ color: '#9c755f' }}>
-              CSS
-            </li>
+          </ul>
+
+          <h4 className={styles.subttl}>Technologies</h4>
+          <ul>
+            <li className={styles.techItem}>JavaScript</li>
+            <li className={styles.techItem}>React.js</li>
+            <li className={styles.techItem}>Next.js</li>
+            <li className={styles.techItem}>Node.js</li>
+            <li className={styles.techItem}>Express.js</li>
+            <li className={styles.techItem}>HTML5</li>
+            <li className={styles.techItem}>CSS3</li>
           </ul>
         </div>
       </div>
